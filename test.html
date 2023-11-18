@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="content"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+ // URL base da API.
+        apiBase = 'https://aula-17-76eb7-default-rtdb.firebaseio.com/';
+
+        axios.get(apiBase + 'item/.json')
+            .then((response) => { console.log(response); })
+            .catch((error) => { console.log(error); })
+            .finally(() => { console.log('aways run'); });
+
+        $.get(apiBase + 'item/.json')
+            .done((response) => { console.log(response); })
+            .fail((error) => { console.log(error); })
+            .always(() => { console.log('aways run'); });
+
+        fetch(apiBase + 'item/.json')
+            .then((data) => { return data.json(); })
+            .then((res) => { console.log(res); })
+            .catch((error) => { console.log(error); })
+            .finally(() => { console.log('aways run'); })
+    </script>
+
+</body>
+
+</html>

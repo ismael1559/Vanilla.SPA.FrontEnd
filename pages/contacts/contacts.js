@@ -52,6 +52,23 @@ function sendContact(ev) {
 
 function saveData(data) {
     console.log(data);
+
+    $.post(
+        'https://aula-17-76eb7-default-rtdb.firebaseio.com/contact/.json',
+        JSON.stringify(data)
+        
+        )
+
+        .done((certo) => {
+            console.log('certo:', certo)
+            return true;
+        })
+        .fail((errou) => {
+            console.log('errou:', errou)
+            return false;
+        })
+
+
     return true;
 }
 
