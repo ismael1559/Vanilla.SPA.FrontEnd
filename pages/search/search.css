@@ -1,9 +1,9 @@
-.items, .owners {
+.items {
     color: steelblue;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.items:hover, .owners:hover {
+.items:hover {
     color: orangered;
 }
