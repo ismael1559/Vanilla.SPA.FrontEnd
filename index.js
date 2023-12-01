@@ -141,3 +141,14 @@ function now() {
     const timeParts = dateParts[1].split('.')[0]; // Remove os milissegundos da hora.
     return dateParts[0] + ' ' + timeParts; // Retorna a data, um espaço e a hora.
 }
+ 
+
+
+// Converte uma data ISO para BR.
+function dateISOtoBR(data) {
+    var parts = data.split(" "); // Separa data da hora.
+    var pDate = parts[0].split('-'); // Separa partes da data.
+    var outDate = `${pDate[2]}/${pDate[1]}/${pDate[0]}`; // Remonta a data.
+    if (parts[1]) outDate += ` ${parts[1]}`; // Adiciona a hora novamente.
+    return outDate; // Retorna data formatada.
+}
